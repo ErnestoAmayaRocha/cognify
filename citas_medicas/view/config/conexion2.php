@@ -1,0 +1,16 @@
+<?php
+function conectar()
+{
+  $conexion = null;
+  $host = '127.0.0.1';
+  $db = 'u554379922_cognify';
+  $user = "u554379922_usercognify";
+  $pass = "Passcognify1";
+  try {
+    $conexion = new PDO('mysql:host=' . $host . ';dbname=' . $db, $user, $pass);
+  } catch (PDOException $e) {
+    echo '<p> No se puede conectar a la base de datos </p>';
+    exit;
+  }
+  return $conexion;
+}
